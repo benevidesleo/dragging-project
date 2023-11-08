@@ -11,7 +11,7 @@ document.querySelectorAll('.area').forEach(area => {
 
 
 //FUNCTIONS ITEM
-function dragStart(e) { 
+function dragStart(e) {
     e.currentTarget.classList.add('.dragging')
 }
 
@@ -22,17 +22,20 @@ function dragEnd(e) {
 
 // FUNCTIONS AREAS
 
-function dragOver() {
+function dragOver(e) {
     e.preventDefault()
-    // quando passar por cima da area
+    e.currentTarget.classList.add('hover')
 }
 
-function dragLeave() {
-// quando sair da area 
+function dragLeave(e) {
+    // quando sair da area 
+    e.currentTarget.classList.remove('hover')
 }
 
-function drop() {
-// quando soltar o item na area certa
+function drop(e) {
+    console.log('liberou')
+    // quando soltar o item na area certa
+    e.currentTarget.classList.remove('hover')
 }
 
 
